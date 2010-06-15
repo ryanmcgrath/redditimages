@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>Images in Comments on Reddit</title>
+    <style type="text/css">
+        html {
+            border-top: 5px solid #010101;
+            background-color: #c9c9c9;
+            font-family: helvetica, arial, sans-serif;
+            color: #444;
+        }
+
+        a, a:visited { color: #307ace; text-decoration: none; } a:hover { text-decoration: underline; }
+
+        body {
+            width: 600px;
+            background-color: #fff;
+            padding: 10px 40px;
+            margin: 3% auto 10px;
+            font-size: 12px;
+            line-height: 18px;
+            -webkit-border-radius: 1.7em;
+            -moz-border-radius: 1.7em;
+            border-radius: 1.7em;
+        }
+
+        h1 { color: #f30; font-size: 28px; }
+        h2 { font-size: 18px; }
+       
+        #theLulz { border: 1px solid #c9c9c9; margin: 15px 0 10px; width: 600px; height: 40px; }
+        #lulzInject { width: 590px; height: 150px; padding: 5px; line-height: 15px; font-size: 12px; font-family: inconsolata, monaco, monospace; }
+        #footer { text-align: center; }
+        #ohgoddontreadthis { display: block; margin: 10px 0 -5px 0; font-size: 9px; color: #c9c9c9; }
+        #userscript { display: block; padding: 10px; font-size: 18px; color: #fff; font-weight: bold; text-align: center; 
+            -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; background-color: #94b2d0; }
+        #userscript:hover { text-decoration: none; background-color: #82a8cf; }
+    </style>
+    <script type="text/javascript">
+        function lulz(lol) {
+            document.getElementById("theLulz").style.display = "none";
+            document.getElementById("lulzInject").value = lol.replace(/blol/g, "\n");
+        }
+    </script>
+</head>
+<body>	
+	<h1>Put Images in your Reddit Comments</h1>
+
+    <p>
+        Once upon a time, there existed a <a href="http://www.reddit.com/r/commentimages/" title="Magical Subreddit">magical subreddit</a>
+        where a user by the name of <a href="http://reddit.com/user/jamt9000" title="jamt9000">jamt9000</a>
+        did some real mad scientist type work. He basically created a script (and corresponding stylesheet) to generate small-scale images in comments on Reddit. It
+        was a neat trick, but limited solely to that subreddit, as it required custom CSS to function. You see, madness, as you know, is like gravity - all
+        it takes is a little push!
+    </p>
+
+    <p>
+        Then I got bored. I wrapped up his work into a service to generate the code necessary to show the images in the comments, and wrote a corresponding
+        user script (Firefox, Opera, Chrome, et al that support user scripts) to handle the necessary CSS injection. That's part of why this is cool - unless you
+        install said userscript, <strong>your Reddit experience will (mostly) not change at all - almost 100% opt-in</strong>.
+    </p>
+	
+    <a id="userscript" href="http://reddit.venodesigns.net/redditimages.user.js" title="Reddit: Images in Comments User Script">Download the Reddit: Images in Comments User Script</a>
+
+	<div id="bottom">
+        <iframe src="lulz.html" id="theLulz"></iframe>
+        <textarea id="lulzInject"></textarea>
+    </div>
+
+    <p id="footer">
+	    This service was created by <a href="http://twitter.com/ryanmcgrath/" title="Ryan McGrath" target="_blank">Ryan McGrath</a>, because some men just like to watch the world burn.
+        In the spirit of the original effort by jamt9000, this work is all open sourced and up on Github.
+        <span id="ohgoddontreadthis">This may or may not cause Reddit pages to crash due to the amount of nodes appended. I claim social experiment.</span>
+    </p>
+</body>
+</html>
